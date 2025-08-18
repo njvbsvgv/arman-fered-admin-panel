@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@font-face {
+  src: url(./assets/font/Vazirmatn-Bold.ttf);
+  font-family: vazirMatn;
+}
+
+@layer components {
+  .customeInput {
+    @apply w-full py-2.5 px-3 border text-[14px] border-[#E5E7EB]
+          rounded-2xl focus:border-[#afafaf] outline-0;
+  }
+}
+
+
+@layer components {
+    .formBtn {
+        @apply w-32 px-1.5 py-1 pb-1.5 border rounded-2xl cursor-pointer
+    }
+}
+
+.Toastify__toast {
+  font-family: 'VazirMatn', sans-serif;
+}

@@ -1,0 +1,1 @@
+export type TInputOnChange = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
