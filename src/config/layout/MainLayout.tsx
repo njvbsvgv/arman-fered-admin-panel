@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 
 const MainLayout = () => {
   const [documentHeight, setDocumentHeight] = useState<number | null>(null);
+  const [widthLayout, setWidthLayout] = useState<string | null>(null);
   const { pathname } = useLocation();
 
   console.log("pathname ==>", pathname);
@@ -30,6 +31,10 @@ const MainLayout = () => {
     });
   }, []);
 
+  useEffect(() => {
+    setWidthLayout(pathname !== "/login" && pathname !== "/" ? "80%" : "100%");
+  }, [pathname]);
+
   return (
     <main
       dir="rtl"
@@ -43,14 +48,16 @@ const MainLayout = () => {
           <Navbar />
         </div>
       )}
-      <div
-        className="children max-lg:w-full max-lg:relative max-lg:top-12 h-full bg-[#F5F7FF]"
-        style={{
-          width: pathname !== "/login" && pathname !== "/" ? "80%" : "100%",
-        }}
-      >
-        <Outlet />
-      </div>
+      {pathname !== "/login" && pathname !== "/" ? (
+        <div className="children w-4/5 max-lg:w-full max-lg:relative max-lg:top-12 h-full bg-[#F5F7FF]">
+          <Outlet />
+        </div>
+      ) : (
+        <div className="children w-full max-lg:w-full max-lg:relative max-lg:top-12 h-full bg-[#F5F7FF]">
+          <Outlet />
+        </div>
+      )}
+
       <ToastContainer />
     </main>
   );
