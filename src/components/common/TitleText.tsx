@@ -1,4 +1,3 @@
-import React from "react";
 import type { TTitleText } from "../../core/types/TTitleText";
 
 const TitleText: React.FC<TTitleText> = ({ title, fontSize, color, className }) => {

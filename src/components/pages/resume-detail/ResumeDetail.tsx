@@ -1,13 +1,8 @@
-import React from "react";
 import FormLayout from "../../partial/FormLayout";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { useGetResumeWithId } from "../../../core/services/api";
 import Information from "./Information";
-import { CustomeBt } from "../../common";
-import { RiEdit2Fill } from "react-icons/ri";
-import { MdDelete } from "react-icons/md";
-import { useDeleteResume } from "../../../core/services/api/delete/useDeleteResume";
 import BtnItem from "./BtnItem";
 
 const ResumeDetail = () => {

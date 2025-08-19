@@ -1,0 +1,8 @@
+{
+  "platform": "static",
+  "build": "npm run build",
+  "static": {
+    "publicDir": "dist"
+  },
+  "version": "18"
+}

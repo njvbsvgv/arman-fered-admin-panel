@@ -4,12 +4,15 @@ import Resume from "../../components/pages/resume/Resume";
 import CreateResume from "../../components/pages/create-rsume/CreateResume";
 import ResumeDetail from "../../components/pages/resume-detail/ResumeDetail";
 import UpdateResume from "../../components/pages/update-resume/UpdateResume";
+import Login from "../../components/pages/authontication/Login";
 
 export const commonRouter = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     children: [
+      { path: "/", element: <Login /> },
+      { path: "/login", element: <Login /> },
       { path: "/resume", element: <Resume /> },
       { path: "/resume-detail/:id", element: <ResumeDetail /> },
       { path: "/create-resume", element: <CreateResume /> },

@@ -36,11 +36,11 @@ export const navbarData = [
     navLink: "/admin-management",
     navLink2: "/admin-management",
   },
-  // {
-  //   id: 6,
-  //   name: "خروج",
-  //   icon: "",
-  //   navLink: "/information",
-  //   navLink2: "/information",
-  // },
+  {
+    id: 6,
+    name: "خروج",
+    icon: "",
+    navLink: "/login",
+    navLink2: "/login",
+  },
 ];

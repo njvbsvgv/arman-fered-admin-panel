@@ -1,7 +1,6 @@
-import React from "react";
 import FormLayout from "../../partial/FormLayout";
 import { CustomeBt } from "../../common";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetResumeWithId } from "../../../core/services/api";
 import { addDataToResumeEditeState } from "../../../core/redux/slice/actions";

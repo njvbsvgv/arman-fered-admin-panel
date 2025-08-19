@@ -1,7 +1,6 @@
-import React from "react";
 import type { TGlobal } from "../../core/types/TGlobal";
 
-const SpinnerLoading = ({width, height, fillBg}: TGlobal) => {
+const SpinnerLoading = ({width, height}: TGlobal) => {
   return (
     <svg
       width={`${width}px`}

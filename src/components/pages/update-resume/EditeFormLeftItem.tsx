@@ -1,9 +1,6 @@
 import React, { type JSX } from "react";
 import { CustomeBt } from "../../common";
-import { FaUpload } from "react-icons/fa6";
-import { postImageUpload } from "../../../core/services/api/post/postImageUpload";
 import { useDispatch, useSelector } from "react-redux";
-import { addImage } from "../../../core/redux/slice/actions";
 import type { TInputOnChange } from "../../../core/types/TInputOnChange";
 import SpinnerLoading from "../../common/SpinnerLoading";
 

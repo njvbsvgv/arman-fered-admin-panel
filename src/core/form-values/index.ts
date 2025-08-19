@@ -1,3 +1,4 @@
 import { createResumeFormValues } from './createRsumeForm';
+import { loginFormValues } from './loginFormValues';
 
-export { createResumeFormValues }
+export { createResumeFormValues, loginFormValues }

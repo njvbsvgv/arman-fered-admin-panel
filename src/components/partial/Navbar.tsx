@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { navbarData } from "../../core/constant";
 import CustomeBt from "../common/CustomeBtn";
 import { useLocation, useNavigate } from "react-router";

@@ -1,4 +1,3 @@
-import React from "react";
 import { BtnLoading, CustomeBt, CustomeInput } from "../../common";
 import { createResumeInputData } from "../../../core/constant";
 import FormLeftItem from "./FormLeftItem";

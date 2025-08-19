@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import type { TFormLayout } from "../../core/types/TFormLayout";
-import { TitleText } from "../common";
 
 const FormLayout: React.FC<TFormLayout> = ({ width, children, margin }) => {
   const [marginState, setMarginState] = useState<string>("");

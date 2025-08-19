@@ -1,4 +1,3 @@
-import React from 'react'
 import { TitleText } from '../../common'
 import FormLayout from '../../partial/FormLayout'
 import CreateForm from './CreateForm'

@@ -5,6 +5,13 @@
   font-family: vazirMatn;
 }
 
+@font-face {
+  src: url(./assets/font/Iranian\ Sans.ttf);
+  font-family: iran-sans;
+}
+
+
+
 @layer components {
   .customeInput {
     @apply w-full py-2.5 px-3 border text-[14px] border-[#E5E7EB]
@@ -21,4 +28,11 @@
 
 .Toastify__toast {
   font-family: 'VazirMatn', sans-serif;
+}
+
+@layer components {
+  .loginInput {
+    @apply outline-0 border w-full py-1.5 px-5 border-[#E5E7EB] rounded-2xl
+      placeholder:text-[#6B7280]
+  }
 }

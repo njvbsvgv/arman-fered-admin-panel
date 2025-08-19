@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
 import { TitleText } from "../../common";
-import FormLayout from "../../partial/FormLayout";
 import Card from "./card/Card";
-import { getResumeData, useGetResumeWithId } from "../../../core/services/api";
+import { getResumeData } from "../../../core/services/api";
 import { useSelector } from "react-redux";
-import axios from "axios";
 import Tilt from "react-parallax-tilt";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate, useSearchParams } from "react-router-dom";
 

@@ -1,11 +1,9 @@
-import React from "react";
 import { CustomeBt } from "../../common";
 import { RiEdit2Fill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 import { useDeleteResume } from "../../../core/services/api/delete/useDeleteResume";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import { addDataToResumeEditeState } from "../../../core/redux/slice/actions";
 
 type TBtnItem = {
   id: string | number;
