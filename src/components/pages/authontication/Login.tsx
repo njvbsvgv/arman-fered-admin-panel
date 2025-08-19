@@ -31,7 +31,7 @@ const Login = () => {
     <div className="login-page-control w-full flex justify-center mt-[200px]">
       <form
         action=""
-        className="w-[30%] p-4 bg-[#FFFFFF] rounded-2xl flex flex-col items-center"
+        className="w-[30%] max-lg:w-[50%] max-sm:w-[80%] p-4 bg-[#FFFFFF] rounded-2xl flex flex-col items-center"
         onSubmit={(event) => (event.preventDefault(), formik.handleSubmit())}
       >
         <p> ورود به پنل </p>
