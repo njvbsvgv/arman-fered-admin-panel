@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const adminDataSlice = createSlice({
+export const dataAdminSlice = createSlice({
   name: "adminDataSlice",
 
   initialState: {

@@ -4,7 +4,8 @@ import { informationSlice } from "./slice/informationSlice";
 import { resumeDetailSlice } from './slice/resumeDetailSlice';
 import { resumeEditeSlice } from './slice/resumeEditeSlice';
 import { loginDataSlice } from './slice/loginDataSlice';
-import { adminDataSlice } from './slice/AdminDataSlice';
+import { dataAdminSlice } from './slice/dataAdminSlice';
+
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,6 @@ export const store = configureStore({
     resumeDetailState: resumeDetailSlice.reducer,
     resumeEditeDataState: resumeEditeSlice.reducer,
     loginDataSliceState: loginDataSlice.reducer,
-    adminDataState: adminDataSlice.reducer
+    adminDataState: dataAdminSlice.reducer
   },
 });

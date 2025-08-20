@@ -1,4 +1,4 @@
-import { adminDataSlice } from "./AdminDataSlice";
+import { dataAdminSlice } from "./dataAdminSlice";
 import { informationSlice } from "./informationSlice";
 import { loginDataSlice } from "./loginDataSlice";
 import { resumeDataSlice } from './resumeDataSlice';
@@ -10,4 +10,4 @@ export const { addDataToResumeState } = resumeDataSlice.actions
 export const { addDataToResumeDetailState } = resumeDetailSlice.actions
 export const { addDataToResumeEditeState, addEditeImage } = resumeEditeSlice.actions
 export const { addDataToLoginFirstState, addDataToLoginLastState } = loginDataSlice.actions
-export const { addDataToAdminDataState } = adminDataSlice.actions
+export const { addDataToAdminDataState } = dataAdminSlice.actions
