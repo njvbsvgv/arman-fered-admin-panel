@@ -1,7 +1,4 @@
-import React from "react";
 import FormLayout from "../../partial/FormLayout";
-import { TitleText } from "../../common";
-import AdminList from "./AdminList";
 import HeadeBtn from "./HeadeBtn";
 import { Outlet } from "react-router";
 import { useGetAdminList } from "../../../core/services/api";
