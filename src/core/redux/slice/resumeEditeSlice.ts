@@ -5,11 +5,19 @@ export const resumeEditeSlice = createSlice({
 
   initialState: {
     resumeEditeData: null,
+    editeImage: null
   },
 
   reducers: {
     addDataToResumeEditeState: (state, action) => {
-      state.resumeEditeData = action.payload;
+      // state.resumeEditeData.image = action.payload.image;
+      // state.resumeEditeData.resumeName = action.payload.resumeName;
+      // state.resumeEditeData.jobTitle = action.payload.jobTitle;
+      // state.resumeEditeData.jobDescription = action.payload.jobDescription;
+      state.resumeEditeData = action.payload
     },
+    addEditeImage: (state, action) => {
+      state.editeImage = action.payload
+    }
   },
 });

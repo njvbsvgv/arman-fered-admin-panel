@@ -1,5 +1,3 @@
-import React from "react";
-import { FaEye } from "react-icons/fa";
 import type { TCard } from "../../../../core/types/TCard";
 import { CustomeBt } from "../../../common";
 
@@ -20,7 +18,8 @@ const Card = ({ image, title, description, onClick }: TCard) => {
         >
           {title}
         </p>
-        <p className="relative right-2 mt-4">{description}</p>
+        <p className="relative right-2 max-w-[80%] mt-4 max-h-[50px] line-clamp-2
+        overflow-hidden text-ellipsis" title={description}>{description}</p>
         <CustomeBt
           text="مشاهده"
           className="text-white bg-[#4F6DF5] w-2/4 mt-6 overflow-hidden

@@ -31,6 +31,7 @@ const CreateForm = () => {
       onSubmit={(event) => {
         event.preventDefault(), formik.handleSubmit();
       }}
+      data-aos="fade-down"
     >
       <div className="form-input-control flex gap-x-3 max-md:flex-col-reverse max-md:items-center">
         <div className="right w-[70%] flex flex-col gap-y-9 max-md:w-full max-md:mt-8">

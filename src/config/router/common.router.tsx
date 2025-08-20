@@ -5,6 +5,9 @@ import CreateResume from "../../components/pages/create-rsume/CreateResume";
 import ResumeDetail from "../../components/pages/resume-detail/ResumeDetail";
 import UpdateResume from "../../components/pages/update-resume/UpdateResume";
 import Login from "../../components/pages/authontication/Login";
+import { AdminManagementLastWrapper } from "../../screens";
+import AdminList from "../../components/pages/admin-management/AdminList";
+import CreateAdmin from "../../components/pages/admin-management/CreateAdmin";
 
 export const commonRouter = createBrowserRouter([
   {
@@ -18,6 +21,10 @@ export const commonRouter = createBrowserRouter([
       { path: "/create-resume", element: <CreateResume /> },
       { path: "/update-resume", element: <UpdateResume /> },
       { path: "/update-resume/:id", element: <UpdateResume /> },
+      { path: "/admin-management", element: <AdminManagementLastWrapper />, children:[
+        {path: "/admin-management/admin-list", element: <AdminList />},
+        {path: "/admin-management/create-admin", element: <CreateAdmin />}
+      ] },
     ],
   },
 ]);

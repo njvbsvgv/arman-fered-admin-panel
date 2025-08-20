@@ -4,13 +4,15 @@ import Navbar from "../../components/partial/Navbar";
 import { ToastContainer } from "react-toastify";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
+import { useGetIP } from "../../core/services/api";
 
 const MainLayout = () => {
   const [documentHeight, setDocumentHeight] = useState<number | null>(null);
   const [widthLayout, setWidthLayout] = useState<string | null>(null);
   const { pathname } = useLocation();
 
-  console.log("pathname ==>", pathname);
+  // useGetIP("getIP", "https://ipapi.co/json/")
 
   const getDocumnetHeight = () => {
     setDocumentHeight(window.innerHeight);

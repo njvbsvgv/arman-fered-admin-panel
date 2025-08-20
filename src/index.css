@@ -36,3 +36,18 @@
       placeholder:text-[#6B7280]
   }
 }
+
+@layer components {
+  .activeBtn {
+    @apply w-[150px] bg-[#4F6DF5] p-1.5 text-white rounded-xl cursor-pointer border border-[#4F6DF5]
+  }
+  .notActiveBtn {
+    @apply w-[150px] bg-[#fff] p-1.5 text-[#4F6DF5] rounded-xl cursor-pointer border border-[#E5E7EB]
+  }
+  .active {
+    @apply bg-[#4F6DF5] p-1.5 text-white rounded-xl border border-[#4F6DF5]
+  }
+  .notActive {
+    @apply bg-[#f54f4f] p-1.5 text-white rounded-xl border border-[#f54f4f]
+  }
+}

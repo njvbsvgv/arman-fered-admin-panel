@@ -1,5 +1,5 @@
 import FormLayout from "../../partial/FormLayout";
-import { CustomeBt } from "../../common";
+import { CustomeBt, TitleText } from "../../common";
 import { useNavigate, useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetResumeWithId } from "../../../core/services/api";
@@ -41,7 +41,10 @@ const UpdateResume = () => {
               }}
             />
           ) : (
-            <EditeForm />
+            <div className="w-full flex flex-col items-center">
+              <TitleText title="ویرایش رزومه" className="text-center text-2xl"/>
+              {editeData && <EditeForm formData={editeData.data} />}
+            </div>
           )}
         </div>
       </FormLayout>

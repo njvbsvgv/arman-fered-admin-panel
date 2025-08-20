@@ -1,62 +1,52 @@
-import { BtnLoading, CustomeBt, CustomeInput } from "../../common";
 import { createResumeInputData } from "../../../core/constant";
 import EditeFormLeftItem from "./EditeFormLeftItem";
 import { useFormik } from "formik";
-import { createResumeFormValues } from "../../../core/form-values";
 import { createResumeFormValidation } from "../../../core/validation/createResumeFormValidation";
-import { createResumePost } from "../../../core/services/api";
 import { useSelector } from "react-redux";
+import type { TEditeForm } from "../../../core/types/TEditeForm";
+import BtnItem from "./BtnItem";
+import EditeFormInputs from "./EditeFormInputs";
+import type { TEditeResumeFormikValue } from "../../../core/types/TEditeResumeFormikValue";
+import { useUpdateResume } from "../../../core/services/api";
+import { useParams } from "react-router";
 
-const CreateForm = () => {
-  const image = useSelector((state: any) => state.informationState.image);
-  const { mutate, isLoading } = createResumePost(
-    "createResume",
-    "https://689e9f3a3fed484cf8778bea.mockapi.io/resumeApi"
+const EditeForm: React.FC<TEditeForm> = ({ formData }) => {
+  const { resumeEditeData, editeImage } = useSelector(
+    (state: any) => state.resumeEditeDataState
   );
-  console.log("form image ==>", image)
-  const formik = useFormik({
-    initialValues: createResumeFormValues,
+  const { id } = useParams()
+  console.log("id ==>", id)
+  const updateResume = useUpdateResume(
+    "updateResume",
+    `https://689e9f3a3fed484cf8778bea.mockapi.io/resumeApi/${id}`
+  );
+  const formik = useFormik<TEditeResumeFormikValue>({
+    initialValues: {
+      image: formData.image,
+      resumeName: formData.resumeName,
+      jobTitle: formData.jobTitle,
+      jobDescription: formData.jobDescription,
+    },
     validationSchema: createResumeFormValidation,
     onSubmit: (values) => {
-      console.log("values ==>", values);
-      values = { ...values, image: image ? image : "" }
-      mutate(values);
+      values = { ...values, image: editeImage ? editeImage : formData.image };
+      updateResume.mutate(values)
     },
   });
 
   return (
     <form
       action=""
-      className="mt-12"
+      className="w-full mt-12"
       onSubmit={(event) => {
         event.preventDefault(), formik.handleSubmit();
       }}
+      data-aos="fade-down"
     >
       <div className="form-input-control flex gap-x-3 max-md:flex-col-reverse max-md:items-center">
         <div className="right w-[70%] flex flex-col gap-y-9 max-md:w-full max-md:mt-8">
           {createResumeInputData.map((item, index) => {
-            return (
-              <div className="input-item-control flex flex-col gap-y-2.5">
-                <span className="text-[15px] indent-2">{item.inputTitle}</span>
-                <CustomeInput
-                  key={index}
-                  width={100}
-                  name={item.inputName}
-                  type={item.inputType}
-                  value={
-                    formik.values[item.value as keyof typeof formik.values] ??
-                    ""
-                  }
-                  onChange={formik.handleChange}
-                />
-                {formik.touched[item.value as keyof typeof formik.values] &&
-                  formik.errors[item.value as keyof typeof formik.values] && (
-                    <span className="text-red-600 text-xs indent-2">
-                      {formik.errors[item.value as keyof typeof formik.values]}
-                    </span>
-                  )}
-              </div>
-            );
+            return <EditeFormInputs item={item} formik={formik} key={index} />;
           })}
         </div>
         <EditeFormLeftItem
@@ -71,22 +61,9 @@ const CreateForm = () => {
           )}
         </EditeFormLeftItem>
       </div>
-      <div className="btn-control flex gap-x-3.5 mt-6 max-md:justify-center">
-        {!isLoading ? <CustomeBt
-          text="ثبت"
-          type="submit"
-          className="formBtn
-        bg-[#4F6DF5] border-[#4F6DF5] text-white"
-        /> : <BtnLoading className="bg-[#4F6DF5] border-[#4F6DF5] text-white p-2 px-3 rounded-2xl" />}
-        <CustomeBt
-          text="لغو"
-          type="reset"
-          className="formBtn border-[#4F6DF5]"
-          onClick={formik.handleReset}
-        />
-      </div>
+      <BtnItem isLoading={updateResume.isLoading} />
     </form>
   );
 };
 
-export default CreateForm;
+export default EditeForm;

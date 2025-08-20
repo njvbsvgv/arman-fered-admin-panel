@@ -33,8 +33,8 @@ export const navbarData = [
     id: 5,
     name: "مدیریت ادمین ها",
     icon: "",
-    navLink: "/admin-management",
-    navLink2: "/admin-management",
+    navLink: "/admin-management/admin-list",
+    navLink2: ["/admin-management", "/admin-management/admin-list", "/admin-management/create-admin"],
   },
   {
     id: 6,
